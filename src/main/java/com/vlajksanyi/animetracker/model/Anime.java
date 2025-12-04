@@ -1,6 +1,7 @@
 package com.vlajksanyi.animetracker.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Anime {
     private String status;
     @ManyToOne
     @JoinColumn(name = "genre_id")
-    @JsonIgnore
+    @JsonIgnoreProperties("animes")
     private Genre genre;
 
 }
