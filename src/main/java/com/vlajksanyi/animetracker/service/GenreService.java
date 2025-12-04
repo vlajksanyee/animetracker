@@ -22,7 +22,7 @@ public class GenreService {
         return genreRepository.findById(id);
     }
 
-    public Genre createGenre(Genre genre) {
+    public Genre addGenre(Genre genre) {
         return genreRepository.save(genre);
     }
 

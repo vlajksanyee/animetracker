@@ -18,7 +18,7 @@ public class AnimeService {
     @Autowired
     private GenreRepository genreRepository;
 
-    public List<Anime> getAllAnime() {
+    public List<Anime> getAllAnimes() {
         return animeRepository.findAll();
     }
 

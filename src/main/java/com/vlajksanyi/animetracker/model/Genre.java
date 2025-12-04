@@ -19,6 +19,6 @@ public class Genre {
     private String name;
     private String description;
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL)
-    private List<Anime> animeListWithGenre;
+    private List<Anime> animes;
 
 }
