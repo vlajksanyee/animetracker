@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: anime-db
+    environment:
+      - POSTGRES_USER=animeuser
+      - POSTGRES_PASSWORD=animepass
+      - POSTGRES_DB=animedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - anime-net
+
+  # app:
+  #   build: .
+  #   container_name: anime-app
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/animedb
+  #     - SPRING_DATASOURCE_USERNAME=animeuser
+  #     - SPRING_DATASOURCE_PASSWORD=animepass
+  #   networks:
+  #     - anime-net
+
+volumes:
+  postgres_data:
+
+networks:
+  anime-net:
