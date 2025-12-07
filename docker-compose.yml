@@ -15,19 +15,19 @@ services:
     networks:
       - anime-net
 
-  # app:
-  #   build: .
-  #   container_name: anime-app
-  #   ports:
-  #     - "8080:8080"
-  #   depends_on:
-  #     - postgres
-  #   environment:
-  #     - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/animedb
-  #     - SPRING_DATASOURCE_USERNAME=animeuser
-  #     - SPRING_DATASOURCE_PASSWORD=animepass
-  #   networks:
-  #     - anime-net
+  app:
+    build: .
+    container_name: anime-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/animedb
+      - SPRING_DATASOURCE_USERNAME=animeuser
+      - SPRING_DATASOURCE_PASSWORD=animepass
+    networks:
+      - anime-net
 
 volumes:
   postgres_data:
